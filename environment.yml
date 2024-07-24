@@ -1,0 +1,9 @@
+name: portfolio
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - pandas
+  - python=3.9
