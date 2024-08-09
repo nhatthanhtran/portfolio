@@ -149,10 +149,10 @@ class Exp_Forecast(Exp_Basic):
                     train_loss.append(loss.item())
 
                 if (i + 1) % 100 == 0:
-                    print("\titers: {0}, epoch: {1} | loss: {2:.7f}".format(i + 1, epoch + 1, loss.item()))
+                    self.logger.info("\titers: {0}, epoch: {1} | loss: {2:.7f}".format(i + 1, epoch + 1, loss.item()))
                     speed = (time.time() - time_now) / iter_count
                     left_time = speed * ((self.args.train_epochs - epoch) * train_steps - i)
-                    print('\tspeed: {:.4f}s/iter; left time: {:.4f}s'.format(speed, left_time))
+                    self.logger.info('\tspeed: {:.4f}s/iter; left time: {:.4f}s'.format(speed, left_time))
                     iter_count = 0
                     time_now = time.time()
 
@@ -164,21 +164,19 @@ class Exp_Forecast(Exp_Basic):
                     loss.backward()
                     model_optim.step()
 
-            print("Epoch: {} cost time: {}".format(epoch + 1, time.time() - epoch_time))
+            self.logger.info("Epoch: {} cost time: {}".format(epoch + 1, time.time() - epoch_time))
             train_loss = np.average(train_loss)
             vali_loss = self.vali(vali_data, vali_loader, criterion)
             test_loss = self.vali(test_data, test_loader, criterion)
 
-            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
+            self.logger.info("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
                 epoch + 1, train_steps, train_loss, vali_loss, test_loss))
             early_stopping(vali_loss, self.model, path)
             if early_stopping.early_stop:
-                print("Early stopping")
+                self.logger.info("Early stopping")
                 break
 
             adjust_learning_rate(model_optim, epoch + 1, self.args)
-
-            # get_cka(self.args, setting, self.model, train_loader, self.device, epoch)
 
         best_model_path = path + '/' + 'checkpoint.pth'
         self.model.load_state_dict(torch.load(best_model_path))
@@ -188,12 +186,9 @@ class Exp_Forecast(Exp_Basic):
     def test(self, setting, test=0):
         test_data, test_loader = self._get_data(flag='test')
         if test:
-            print('loading model')
+            self.logger.info('loading model')
             self.model.load_state_dict(torch.load(os.path.join('./checkpoints/' + setting, 'checkpoint.pth')))
 
-        # power_preds = []
-        # power_trues = []
-        # power_inputs = []
 
         preds = []
         trues = []
@@ -249,10 +244,6 @@ class Exp_Forecast(Exp_Basic):
                 trues.append(true)
                 inputx.append(batch_x.detach().cpu().numpy())
 
-                # power_preds.append(test_data.inverse_transform(outputs))
-                # power_trues.append(test_data.inverse_transform(batch_y))
-                # power_inputs.append(test_data.inverse_transform(batch_x[:,:self.args.seq_len,:]).detach().cpu().numpy())
-
                 if i % 20 == 0:
                     input = batch_x.detach().cpu().numpy()
                     if test_data.scale and self.args.inverse:
@@ -265,19 +256,11 @@ class Exp_Forecast(Exp_Basic):
         preds = np.array(preds)
         trues = np.array(trues)
         inputx = np.array(inputx)
-        print('test shape:', preds.shape, trues.shape)
+        self.logger.info('test shape:', preds.shape, trues.shape)
         preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1])
         trues = trues.reshape(-1, trues.shape[-2], trues.shape[-1])
         inputx = inputx.reshape(-1, inputx.shape[-2], inputx.shape[-1])
-        print('test shape:', preds.shape, trues.shape)
-
-
-        # power_preds = np.array(power_preds)
-        # power_trues = np.array(power_trues)
-        # power_inputs = np.array(power_inputs)
-        # power_preds = power_preds.reshape(-1, power_preds.shape[-2], power_preds.shape[-1])
-        # power_trues = power_trues.reshape(-1, power_trues.shape[-2], power_trues.shape[-1])
-        # power_inputs = power_inputs.reshape(-1, power_inputs.shape[-2], power_inputs.shape[-1])
+        self.logger.info('test shape:', preds.shape, trues.shape)
 
         # result save
         folder_path = './results/' + setting + '/'
@@ -285,7 +268,7 @@ class Exp_Forecast(Exp_Basic):
             os.makedirs(folder_path)
 
         mae, mse, rmse, mape, mspe = metric(preds, trues)
-        print('mse:{}, mae:{}'.format(mse, mae))
+        self.logger.info('mse:{}, mae:{}'.format(mse, mae))
         f = open("result_long_term_forecast.txt", 'a')
         f.write(setting + "  \n")
         f.write('mse:{}, mae:{}'.format(mse, mae))
@@ -297,11 +280,6 @@ class Exp_Forecast(Exp_Basic):
         np.save(folder_path + 'pred.npy', preds)
         np.save(folder_path + 'true.npy', trues)
         np.save(folder_path + 'x.npy', inputx)
-
-        # np.save(folder_path + f'{self.args.features}_{self.args.model}_power_pred.npy', power_preds)
-        # np.save(folder_path + f'{self.args.features}_{self.args.model}_power_true.npy', power_trues)
-        # np.save(folder_path + f'{self.args.features}_{self.args.model}_power_input.npy', power_inputs)
-
         return
 
 

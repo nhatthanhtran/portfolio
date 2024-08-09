@@ -3,7 +3,7 @@ import torch
 from model import PortfolioTransformer
 
 class Exp_Basic(object):
-    def __init__(self, args):
+    def __init__(self, args, configs, logger):
         self.args = args
         self.model_dict = {
             'PortfolioTransformer': PortfolioTransformer,
@@ -11,7 +11,8 @@ class Exp_Basic(object):
         }
         self.device = self._acquire_device()
         self.model = self._build_model().to(self.device)
-
+        self.configs = config
+        self.logger = logger
     def _build_model(self):
         raise NotImplementedError
         return None

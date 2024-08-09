@@ -56,9 +56,16 @@ def parse_option():
 def main()
     args, config = parse_option()
 
-    Exp = Exp_Forecast
+    
 
+    os.makedirs(config.OUTPUT, exist_ok=True)
+    logger = create_logger(output_dir=config.OUTPUT, 1, name=f"{config.MODEL.NAME}")
 
+    #print config
+    logger.info(config.dump())
+
+    # Start experiments
+    Exp = Exp_Forecast(args, configs, logger)
 
 if __name__ == "__main__":
     main()
