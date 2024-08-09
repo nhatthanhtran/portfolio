@@ -9,13 +9,14 @@ import os
 import time
 import warnings
 import numpy as np
+from experiments.exp_basic import Exp_Basic
 
 warnings.filterwarnings('ignore')
 
 
 class Exp_Forecast(Exp_Basic):
-    def __init__(self, args):
-        super(Exp_Forecast, self).__init__(args)
+    def __init__(self, args, config, logger):
+        super(Exp_Forecast, self).__init__(args, config, logger)
 
     def _build_model(self):
         model = self.model_dict[self.args.model].Model(self.args).float()
