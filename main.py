@@ -10,7 +10,7 @@ from logger import create_logger
 
 from experiments.exp_port import Exp_Forecast
 from config import get_config
-
+import pdb
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -56,7 +56,7 @@ def parse_option():
     parser.add_argument('--find-unused-params', action='store_true', default=False)
 
     # GPU
-    parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')
+    parser.add_argument('--use_gpu', type=bool, default=False, help='use gpu')
     parser.add_argument('--gpu', type=int, default=0, help='gpu')
     parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
     parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids of multile gpus')
@@ -99,6 +99,7 @@ def parse_option():
     
     
     
+    pdb.set_trace()
     args, unparsed = parser.parse_known_args()
 
     config = get_config(args)
@@ -107,9 +108,10 @@ def parse_option():
 
 
 def main():
+    pdb.set_trace()
     args, config = parse_option()
 
-    
+    print(args.use_gpu)
 
     os.makedirs(config.OUTPUT, exist_ok=True)
     logger = create_logger(output_dir=config.OUTPUT, dist_rank=1, name=f"{config.MODEL.NAME}")
