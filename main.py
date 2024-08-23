@@ -56,7 +56,7 @@ def parse_option():
     parser.add_argument('--find-unused-params', action='store_true', default=False)
 
     # GPU
-    parser.add_argument('--use_gpu', type=bool, default=False, help='use gpu')
+    parser.add_argument('--use_gpu', action=argparse.BooleanOptionalAction, default=True, help='use gpu')
     parser.add_argument('--gpu', type=int, default=0, help='gpu')
     parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
     parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids of multile gpus')
@@ -91,7 +91,7 @@ def parse_option():
     parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')
 
     # Dummy holding 
-    parser.add_argument('--channel_independence', type=bool, default=False, help='whether to use channel_independence mechanism')
+    parser.add_argument('--channel_independence', action=argparse.BooleanOptionalAction, default=True, help='whether to use channel_independence mechanism')
     parser.add_argument('--freq', type=str, default='h',
                         help='freq for time features encoding, options:[s:secondly, t:minutely, h:hourly, d:daily, b:business days, w:weekly, m:monthly], you can also use more detailed freq like 15min or 3h')
     parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
