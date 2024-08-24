@@ -96,10 +96,6 @@ def parse_option():
                         help='freq for time features encoding, options:[s:secondly, t:minutely, h:hourly, d:daily, b:business days, w:weekly, m:monthly], you can also use more detailed freq like 15min or 3h')
     parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
     
-    
-    
-    
-    pdb.set_trace()
     args, unparsed = parser.parse_known_args()
 
     config = get_config(args)
@@ -108,10 +104,8 @@ def parse_option():
 
 
 def main():
-    pdb.set_trace()
-    args, config = parse_option()
 
-    print(args.use_gpu)
+    args, config = parse_option()
 
     os.makedirs(config.OUTPUT, exist_ok=True)
     logger = create_logger(output_dir=config.OUTPUT, dist_rank=1, name=f"{config.MODEL.NAME}")
