@@ -5,13 +5,14 @@ import torch
 from torch.utils.data import Dataset
 from sklearn.preprocessing import StandardScaler
 import warnings
+from utils.timefeatures import time_features
 
 warnings.filterwarnings('ignore')
 
 class Dataset_NASDAQ_subset(Dataset):
     def __init__(self, root_path, flag='train', size=None,
                  features='S', data_path='subset_nasdaq_data.csv',
-                 scale=True, timeenc=0, freq='d'):
+                 scale=True, timeenc=0, freq='d',target="OT"):
         # size [seq_len, label_len, pred_len]
         if size is None:
             self.seq_len = 252  # Example: 1 year of daily data (252 trading days)
@@ -48,6 +49,7 @@ class Dataset_NASDAQ_subset(Dataset):
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
 
+
         if self.scale:
             train_data = df_raw.iloc[:num_train, 1:].values
             self.scaler.fit(train_data)
@@ -62,11 +64,13 @@ class Dataset_NASDAQ_subset(Dataset):
         df_stamp['year'] = df_stamp['date'].apply(lambda row: row.year)
         data_stamp = df_stamp.drop(['date'], axis=1).values
 
+        
         self.data_x = data[border1:border2]
         self.data_y = data[border1:border2]
         self.data_stamp = data_stamp
 
     def __getitem__(self, index):
+
         s_begin = index
         s_end = s_begin + self.seq_len
         r_begin = s_end - self.label_len
@@ -77,7 +81,9 @@ class Dataset_NASDAQ_subset(Dataset):
         seq_x_mark = self.data_stamp[s_begin:s_end]
         seq_y_mark = self.data_stamp[r_begin:r_end]
 
-        return seq_x, seq_y, seq_x_mark, seq_y_mark
+        # return seq_x, seq_y, seq_x_mark, seq_y_mark
+        return seq_x, seq_y, np.array([0]), np.array([0])
+
 
     def __len__(self):
         return len(self.data_x) - self.seq_len - self.pred_len + 1

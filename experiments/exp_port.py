@@ -1,6 +1,6 @@
-# from data_provider.data_factory import data_provider
+from data_provider.data_factory import data_provider
 # from experiments.exp_basic import Exp_Basic
-# from utils.tools import EarlyStopping, adjust_learning_rate, visual
+from utils.tools import EarlyStopping, adjust_learning_rate
 # from utils.metrics import metric
 import torch
 import torch.nn as nn
@@ -10,7 +10,7 @@ import time
 import warnings
 import numpy as np
 from experiments.exp_basic import Exp_Basic
-
+import pdb
 warnings.filterwarnings('ignore')
 
 
@@ -51,7 +51,8 @@ class Exp_Forecast(Exp_Basic):
                 else:
                     batch_x_mark = batch_x_mark.float().to(self.device)
                     batch_y_mark = batch_y_mark.float().to(self.device)
-
+                batch_x_mark = None
+                batch_y_mark = None
                 # decoder input
                 dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
                 dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
@@ -98,8 +99,6 @@ class Exp_Forecast(Exp_Basic):
         model_optim = self._select_optimizer()
         criterion = self._select_criterion()
 
-        if self.args.use_amp:
-            scaler = torch.cuda.amp.GradScaler()
 
         for epoch in range(self.args.train_epochs):
             iter_count = 0
@@ -107,19 +106,23 @@ class Exp_Forecast(Exp_Basic):
 
             self.model.train()
             epoch_time = time.time()
+            
             for i, (batch_x, batch_y, batch_x_mark, batch_y_mark) in enumerate(train_loader):
                 iter_count += 1
+                
                 model_optim.zero_grad()
                 batch_x = batch_x.float().to(self.device)
 
                 batch_y = batch_y.float().to(self.device)
+
                 if 'PEMS' in self.args.data or 'Solar' in self.args.data:
                     batch_x_mark = None
                     batch_y_mark = None
                 else:
                     batch_x_mark = batch_x_mark.float().to(self.device)
                     batch_y_mark = batch_y_mark.float().to(self.device)
-
+                batch_x_mark = None
+                batch_y_mark = None
                 # decoder input
                 dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
                 dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
@@ -148,8 +151,8 @@ class Exp_Forecast(Exp_Basic):
                     batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
                     loss = criterion(outputs, batch_y)
                     train_loss.append(loss.item())
-
-                if (i + 1) % 100 == 0:
+                
+                if (i + 100) % 1 == 0:
                     self.logger.info("\titers: {0}, epoch: {1} | loss: {2:.7f}".format(i + 1, epoch + 1, loss.item()))
                     speed = (time.time() - time_now) / iter_count
                     left_time = speed * ((self.args.train_epochs - epoch) * train_steps - i)
@@ -210,7 +213,8 @@ class Exp_Forecast(Exp_Basic):
                 else:
                     batch_x_mark = batch_x_mark.float().to(self.device)
                     batch_y_mark = batch_y_mark.float().to(self.device)
-
+                batch_x_mark = None
+                batch_y_mark = None
                 # decoder input
                 dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
                 dec_inp = torch.cat([batch_y[:, :self.args.label_len, :], dec_inp], dim=1).float().to(self.device)
@@ -252,7 +256,7 @@ class Exp_Forecast(Exp_Basic):
                         input = test_data.inverse_transform(input.squeeze(0)).reshape(shape)
                     gt = np.concatenate((input[0, :, -1], true[0, :, -1]), axis=0)
                     pd = np.concatenate((input[0, :, -1], pred[0, :, -1]), axis=0)
-                    visual(gt, pd, os.path.join(folder_path, str(i) + '.pdf'))
+                    # visual(gt, pd, os.path.join(folder_path, str(i) + '.pdf'))
 
         preds = np.array(preds)
         trues = np.array(trues)
