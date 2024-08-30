@@ -64,7 +64,6 @@ class Dataset_NASDAQ_subset(Dataset):
         df_stamp['year'] = df_stamp['date'].apply(lambda row: row.year)
         data_stamp = df_stamp.drop(['date'], axis=1).values
 
-        
         self.data_x = data[border1:border2]
         self.data_y = data[border1:border2]
         self.data_stamp = data_stamp

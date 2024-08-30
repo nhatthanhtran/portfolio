@@ -108,7 +108,7 @@ _C.TRAIN.OPTIMIZER.MOMENTUM = 0.9
 # overwritten by command line argument
 _C.AMP = False
 # Path to output folder, overwritten by command line argument
-_C.OUTPUT = ''
+_C.OUTPUT = './logs/example.txt'
 # Tag of experiment, overwritten by command line argument
 _C.TAG = 'default'
 # Frequency to save checkpoint

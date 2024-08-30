@@ -1,0 +1,336 @@
+[2024-08-30 12:00:34 example_name] (main.py 27): INFO AMP: false
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 32
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: subset_nasdaq_data.csv
+  IMG_SIZE: 224
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  NAME: example_name
+  RESUME: ''
+  TYPE: example
+OUTPUT: output/example_name/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+THROUGHPUT_MODE: false
+TRAIN:
+  AUTO_RESUME: true
+  BASE_LR: 0.0005
+  CLIP_GRAD: 5.0
+  COOLDOWN_EPOCHS: 0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 5.0e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 5.0e-07
+  WEIGHT_DECAY: 0.05
+
+[2024-08-30 12:00:36 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 1 | loss: nan
+[2024-08-30 12:00:36 example_name] (exp_port.py 159): INFO 	speed: 0.8563s/iter; left time: 46.2376s
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 1 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.1084s/iter; left time: 5.7469s
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 1 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.0390s/iter; left time: 2.0273s
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 1 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.0389s/iter; left time: 1.9851s
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 1 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.0390s/iter; left time: 1.9494s
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 1 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.0386s/iter; left time: 1.8936s
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 1 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.0375s/iter; left time: 1.8013s
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 1 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.0375s/iter; left time: 1.7615s
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 1 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.0375s/iter; left time: 1.7231s
+[2024-08-30 12:00:37 example_name] (exp_port.py 171): INFO Epoch: 1 cost time: 1.2439138889312744
+[2024-08-30 12:00:37 example_name] (exp_port.py 176): INFO Epoch: 1, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 2 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.6053s/iter; left time: 27.2383s
+[2024-08-30 12:00:37 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 2 | loss: nan
+[2024-08-30 12:00:37 example_name] (exp_port.py 159): INFO 	speed: 0.0363s/iter; left time: 1.5970s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 2 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0363s/iter; left time: 1.5593s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 2 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0362s/iter; left time: 1.5211s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 2 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0360s/iter; left time: 1.4774s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 2 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0359s/iter; left time: 1.4343s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 2 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 1.3968s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 2 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 1.3589s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 2 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 1.3253s
+[2024-08-30 12:00:38 example_name] (exp_port.py 171): INFO Epoch: 2 cost time: 0.31418657302856445
+[2024-08-30 12:00:38 example_name] (exp_port.py 176): INFO Epoch: 2, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 3 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.5943s/iter; left time: 21.3937s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 3 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0359s/iter; left time: 1.2569s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 3 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0360s/iter; left time: 1.2252s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 3 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 1.1806s
+[2024-08-30 12:00:38 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 3 | loss: nan
+[2024-08-30 12:00:38 example_name] (exp_port.py 159): INFO 	speed: 0.0359s/iter; left time: 1.1474s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 3 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0359s/iter; left time: 1.1115s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 3 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 1.0745s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 3 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 1.0381s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 3 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 1.0036s
+[2024-08-30 12:00:39 example_name] (exp_port.py 171): INFO Epoch: 3 cost time: 0.3127739429473877
+[2024-08-30 12:00:39 example_name] (exp_port.py 176): INFO Epoch: 3, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 4 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.5932s/iter; left time: 16.0161s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 4 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.9309s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 4 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0359s/iter; left time: 0.8975s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 4 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.8581s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 4 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.8232s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 4 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0360s/iter; left time: 0.7925s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 4 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.7509s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 4 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.7152s
+[2024-08-30 12:00:39 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 4 | loss: nan
+[2024-08-30 12:00:39 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.6802s
+[2024-08-30 12:00:40 example_name] (exp_port.py 171): INFO Epoch: 4 cost time: 0.31252455711364746
+[2024-08-30 12:00:40 example_name] (exp_port.py 176): INFO Epoch: 4, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 5 | loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 159): INFO 	speed: 0.5923s/iter; left time: 10.6620s
+[2024-08-30 12:00:40 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 5 | loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.6092s
+[2024-08-30 12:00:40 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 5 | loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.5732s
+[2024-08-30 12:00:40 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 5 | loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.5372s
+[2024-08-30 12:00:40 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 5 | loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.5010s
+[2024-08-30 12:00:40 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 5 | loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.4658s
+[2024-08-30 12:00:40 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 5 | loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.4293s
+[2024-08-30 12:00:40 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 5 | loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.3933s
+[2024-08-30 12:00:40 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 5 | loss: nan
+[2024-08-30 12:00:40 example_name] (exp_port.py 159): INFO 	speed: 0.0359s/iter; left time: 0.3586s
+[2024-08-30 12:00:40 example_name] (exp_port.py 171): INFO Epoch: 5 cost time: 0.31234025955200195
+[2024-08-30 12:00:41 example_name] (exp_port.py 176): INFO Epoch: 5, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 6 | loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 159): INFO 	speed: 0.5940s/iter; left time: 5.3459s
+[2024-08-30 12:00:41 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 6 | loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 159): INFO 	speed: 0.0360s/iter; left time: 0.2883s
+[2024-08-30 12:00:41 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 6 | loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 159): INFO 	speed: 0.0361s/iter; left time: 0.2528s
+[2024-08-30 12:00:41 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 6 | loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.2148s
+[2024-08-30 12:00:41 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 6 | loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.1790s
+[2024-08-30 12:00:41 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 6 | loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.1432s
+[2024-08-30 12:00:41 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 6 | loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.1075s
+[2024-08-30 12:00:41 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 6 | loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.0716s
+[2024-08-30 12:00:41 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 6 | loss: nan
+[2024-08-30 12:00:41 example_name] (exp_port.py 159): INFO 	speed: 0.0359s/iter; left time: 0.0359s
+[2024-08-30 12:00:41 example_name] (exp_port.py 171): INFO Epoch: 6 cost time: 0.31321120262145996
+[2024-08-30 12:00:42 example_name] (exp_port.py 176): INFO Epoch: 6, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:33:11 example_name] (main.py 27): INFO AMP: false
+BASE:
+- ''
+DATA:
+  BATCH_SIZE: 32
+  CACHE_MODE: part
+  DATASET: imagenet
+  DATA_PATH: subset_nasdaq_data.csv
+  IMG_SIZE: 224
+EVAL_MODE: false
+LOCAL_RANK: 0
+MODEL:
+  DROP_PATH_RATE: 0.1
+  DROP_RATE: 0.0
+  LABEL_SMOOTHING: 0.1
+  NAME: example_name
+  RESUME: ''
+  TYPE: example
+OUTPUT: output/example_name/default
+PRINT_FREQ: 100
+SAVE_FREQ: 1
+SEED: 0
+TAG: default
+THROUGHPUT_MODE: false
+TRAIN:
+  AUTO_RESUME: true
+  BASE_LR: 0.0005
+  CLIP_GRAD: 5.0
+  COOLDOWN_EPOCHS: 0
+  EPOCHS: 300
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 30
+    DECAY_RATE: 0.1
+    NAME: cosine
+  MIN_LR: 5.0e-06
+  OPTIMIZER:
+    BETAS:
+    - 0.9
+    - 0.999
+    EPS: 1.0e-08
+    MOMENTUM: 0.9
+    NAME: adamw
+  START_EPOCH: 0
+  USE_CHECKPOINT: false
+  WARMUP_EPOCHS: 20
+  WARMUP_LR: 5.0e-07
+  WEIGHT_DECAY: 0.05
+
+[2024-08-30 12:45:25 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 1 | loss: nan
+[2024-08-30 12:45:25 example_name] (exp_port.py 159): INFO 	speed: 0.8539s/iter; left time: 46.1132s
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 1 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.1121s/iter; left time: 5.9388s
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 1 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.0385s/iter; left time: 1.9994s
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 1 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.0371s/iter; left time: 1.8928s
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 1 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.0369s/iter; left time: 1.8462s
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 1 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.0370s/iter; left time: 1.8138s
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 1 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.0368s/iter; left time: 1.7652s
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 1 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.0363s/iter; left time: 1.7082s
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 1 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 1.6370s
+[2024-08-30 12:45:26 example_name] (exp_port.py 171): INFO Epoch: 1 cost time: 1.235692024230957
+[2024-08-30 12:45:26 example_name] (exp_port.py 176): INFO Epoch: 1, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 2 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.6019s/iter; left time: 27.0861s
+[2024-08-30 12:45:26 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 2 | loss: nan
+[2024-08-30 12:45:26 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 1.5676s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 2 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 1.5302s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 2 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0355s/iter; left time: 1.4929s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 2 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 1.4609s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 2 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0357s/iter; left time: 1.4276s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 2 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 1.3894s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 2 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0357s/iter; left time: 1.3549s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 2 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0355s/iter; left time: 1.3152s
+[2024-08-30 12:45:27 example_name] (exp_port.py 171): INFO Epoch: 2 cost time: 0.31060051918029785
+[2024-08-30 12:45:27 example_name] (exp_port.py 176): INFO Epoch: 2, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 3 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.5960s/iter; left time: 21.4561s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 3 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 1.2519s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 3 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 1.2101s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 3 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0357s/iter; left time: 1.1786s
+[2024-08-30 12:45:27 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 3 | loss: nan
+[2024-08-30 12:45:27 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 1.1385s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 3 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0357s/iter; left time: 1.1067s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 3 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0357s/iter; left time: 1.0708s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 3 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 1.0333s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 3 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0355s/iter; left time: 0.9948s
+[2024-08-30 12:45:28 example_name] (exp_port.py 171): INFO Epoch: 3 cost time: 0.3108210563659668
+[2024-08-30 12:45:28 example_name] (exp_port.py 176): INFO Epoch: 3, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 4 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.6329s/iter; left time: 17.0881s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 4 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0359s/iter; left time: 0.9331s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 4 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 0.8899s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 4 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0355s/iter; left time: 0.8527s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 4 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0377s/iter; left time: 0.8677s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 4 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0380s/iter; left time: 0.8357s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 4 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0380s/iter; left time: 0.7971s
+[2024-08-30 12:45:28 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 4 | loss: nan
+[2024-08-30 12:45:28 example_name] (exp_port.py 159): INFO 	speed: 0.0359s/iter; left time: 0.7171s
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 4 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 0.6761s
+[2024-08-30 12:45:29 example_name] (exp_port.py 171): INFO Epoch: 4 cost time: 0.3176741600036621
+[2024-08-30 12:45:29 example_name] (exp_port.py 176): INFO Epoch: 4, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 5 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.5947s/iter; left time: 10.7053s
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 5 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.6081s
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 5 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 0.5698s
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 5 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.0357s/iter; left time: 0.5358s
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 5 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.0379s/iter; left time: 0.5301s
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 5 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.0378s/iter; left time: 0.4919s
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 5 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.0392s/iter; left time: 0.4701s
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 5 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.0357s/iter; left time: 0.3929s
+[2024-08-30 12:45:29 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 5 | loss: nan
+[2024-08-30 12:45:29 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.3579s
+[2024-08-30 12:45:29 example_name] (exp_port.py 171): INFO Epoch: 5 cost time: 0.32166337966918945
+[2024-08-30 12:45:30 example_name] (exp_port.py 176): INFO Epoch: 5, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 156): INFO 	iters: 1, epoch: 6 | loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 159): INFO 	speed: 0.5974s/iter; left time: 5.3769s
+[2024-08-30 12:45:30 example_name] (exp_port.py 156): INFO 	iters: 2, epoch: 6 | loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.2861s
+[2024-08-30 12:45:30 example_name] (exp_port.py 156): INFO 	iters: 3, epoch: 6 | loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 159): INFO 	speed: 0.0356s/iter; left time: 0.2493s
+[2024-08-30 12:45:30 example_name] (exp_port.py 156): INFO 	iters: 4, epoch: 6 | loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.2150s
+[2024-08-30 12:45:30 example_name] (exp_port.py 156): INFO 	iters: 5, epoch: 6 | loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.1788s
+[2024-08-30 12:45:30 example_name] (exp_port.py 156): INFO 	iters: 6, epoch: 6 | loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 159): INFO 	speed: 0.0376s/iter; left time: 0.1503s
+[2024-08-30 12:45:30 example_name] (exp_port.py 156): INFO 	iters: 7, epoch: 6 | loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 159): INFO 	speed: 0.0377s/iter; left time: 0.1130s
+[2024-08-30 12:45:30 example_name] (exp_port.py 156): INFO 	iters: 8, epoch: 6 | loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.0715s
+[2024-08-30 12:45:30 example_name] (exp_port.py 156): INFO 	iters: 9, epoch: 6 | loss: nan
+[2024-08-30 12:45:30 example_name] (exp_port.py 159): INFO 	speed: 0.0358s/iter; left time: 0.0358s
+[2024-08-30 12:45:30 example_name] (exp_port.py 171): INFO Epoch: 6 cost time: 0.31804800033569336
+[2024-08-30 12:45:31 example_name] (exp_port.py 176): INFO Epoch: 6, Steps: 9 | Train Loss: nan Vali Loss: nan Test Loss: nan
