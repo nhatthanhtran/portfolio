@@ -6,6 +6,9 @@ __pycache__/
 # model path
 *.pth
 
+#log files
+*log_rank*
+
 # C extensions
 *.so
 
