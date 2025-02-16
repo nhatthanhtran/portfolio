@@ -9,6 +9,14 @@ __pycache__/
 #log files
 *log_rank*
 
+# images
+*.png
+*.eps
+*.jpeg
+
+# playground codes
+playground/
+
 # C extensions
 *.so
 

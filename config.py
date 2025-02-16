@@ -31,6 +31,12 @@ _C.DATA.DATASET = 'imagenet'
 # Input image size
 _C.DATA.IMG_SIZE = 224
 
+_C.DATA.INPUT_LEN = 48
+
+_C.DATA.LABEL_LEN = 48
+
+_C.DATA.PRED_LEN = 48
+
 
 # -----------------------------------------------------------------------------
 # Model settings
@@ -61,6 +67,9 @@ _C.MODEL.LABEL_SMOOTHING = 0.1
 # _C.MODEL.MLLA.QKV_BIAS = True
 # _C.MODEL.MLLA.APE = False
 
+# Specific model params
+_C.MODEL.EXAMPLE = CN()
+_C.MODEL.EXAMPLE.HIDDEN_DIM = 512
 # -----------------------------------------------------------------------------
 # Training settings
 # -----------------------------------------------------------------------------

@@ -23,8 +23,9 @@ def main():
     os.makedirs(config.OUTPUT, exist_ok=True)
     logger = create_logger(output_dir=config.OUTPUT, dist_rank=0, name=f"{config.MODEL.NAME}")
 
-    #print config
-    # logger.info(config.dump())
+    # print config
+    logger.info(config.dump())
+    logger.info(args)
 
     # Start experiments
     Exp = Exp_Forecast(args, config, logger)

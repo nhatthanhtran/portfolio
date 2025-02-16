@@ -1,3 +1,15 @@
 MODEL:
   TYPE: example
   NAME: example_name
+  EXAMPLE:
+    HIDDEN_DIM: 512
+DATA:
+  BATCH_SIZE: 32
+  INPUT_LEN: 48
+  LABEL_LEN: 48
+  PRED_LEN: 48
+TRAIN:
+  EPOCHS: 30
+  BASE_LR: 10e-4
+  WEIGHT_DECAY: 10e-8
+
