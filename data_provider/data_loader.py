@@ -58,10 +58,10 @@ class Dataset_NASDAQ_subset(Dataset):
             data = self.scaler.transform(df_raw.iloc[:, 1:].values)
         else:
             data = df_raw.iloc[:, 1:].values
-        print(self.scale)
-        print(np.max(train_data))
-        print(np.max(df_raw.iloc[:num_train, 1:].values))
-        print(np.max(data))
+        # print(self.scale)
+        # print(np.max(train_data))
+        # print(np.max(df_raw.iloc[:num_train, 1:].values))
+        # print(np.max(data))
         
         df_stamp = df_raw.iloc[border1:border2, 0:1]
         df_stamp['date'] = pd.to_datetime(df_stamp['Date'])
@@ -71,7 +71,7 @@ class Dataset_NASDAQ_subset(Dataset):
         data_stamp = df_stamp.drop(['date'], axis=1).values
 
         self.data_x = data[border1:border2]
-        print(np.max(self.data_x))
+        # print(np.max(self.data_x))
         self.data_y = data[border1:border2]
         self.data_stamp = data_stamp
 
