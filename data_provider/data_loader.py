@@ -39,19 +39,21 @@ class Dataset_NASDAQ_subset(Dataset):
     def __read_data__(self):
         self.scaler = StandardScaler()
         df_raw = pd.read_csv(os.path.join(self.root_path, self.data_path))
-        
-        num_train = int(0.7 * len(df_raw))  # 70% for training
-        num_val = int(0.1 * len(df_raw))  # 10% for validation
+        data_leng = int(0.7*len(df_raw))
+        num_train = int(0.7 * data_leng)  # 70% for training
+        num_val = int(0.1 * data_leng)  # 10% for validation
         num_test = len(df_raw) - num_train - num_val  # 20% for testing
         
         border1s = [0, num_train - self.seq_len, num_train + num_val - self.seq_len]
-        border2s = [num_train, num_train + num_val, len(df_raw)]
+        border2s = [num_train, num_train + num_val, data_leng]
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
 
 
         if self.scale:
             train_data = df_raw.iloc[:num_train, 1:].values
+            # import pdb
+            # pdb.set_trace()
             self.scaler.fit(train_data)
             data = self.scaler.transform(df_raw.iloc[:, 1:].values)
         else:
@@ -81,7 +83,7 @@ class Dataset_NASDAQ_subset(Dataset):
         r_end = r_begin + self.label_len + self.pred_len
 
         seq_x = self.data_x[s_begin:s_end]
-        seq_y = self.data_y[r_begin:r_end]
+        seq_y = self.data_y[r_begin:r_end]                  # data_y is somehow too big
         seq_x_mark = self.data_stamp[s_begin:s_end]
         seq_y_mark = self.data_stamp[r_begin:r_end]
 
